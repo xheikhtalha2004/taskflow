@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do App</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <main class="page">
+        <section class="todo-container">
+            <header class="todo-header">
+                <p class="app-label">Task Manager</p>
+                <h1>To-Do List</h1>
+            </header>
+
+            <form id="taskForm" class="input" autocomplete="off">
+                <label for="todoInput" class="sr-only">Enter task</label>
+                <input
+                    type="text"
+                    id="todoInput"
+                    class="input-field"
+                    placeholder="Enter a task"
+                    maxlength="80"
+                >
+                <button type="submit" class="btn">Add</button>
+            </form>
+
+            <p id="message" class="message" aria-live="polite"></p>
+
+            <div class="stats">
+                <div>
+                    <span id="todoCount">0</span>
+                    <p>Total</p>
+                </div>
+                <div>
+                    <span id="pendingCount">0</span>
+                    <p>Pending</p>
+                </div>
+                <div>
+                    <span id="completedCount">0</span>
+                    <p>Done</p>
+                </div>
+            </div>
+
+            <ul id="todoList" class="scroll"></ul>
+            <p id="emptyState" class="empty-state">No tasks yet. Add your first task.</p>
+
+            <button type="button" id="deleteAll" class="clear-btn">Delete All</button>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p class="made-by">Made By</p>
+        <p class="author-name">Xheikh Talha</p>
+    </footer>
+</body>
+</html>
