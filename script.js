@@ -6,14 +6,14 @@ const todoList = document.getElementById("todoList");
 const todoCount = document.getElementById("todoCount");
 const pendingCount = document.getElementById("pendingCount");
 const completedCount = document.getElementById("completedCount");
-const deleteAllButton = document.getElementById("deleteAll");
+const clearAllButton = document.getElementById("clearAllButton");
 const message = document.getElementById("message");
 const emptyState = document.getElementById("emptyState");
 
 let todos = loadTodos();
 
 taskForm.addEventListener("submit", handleAddTask);
-deleteAllButton.addEventListener("click", deleteAllTasks);
+clearAllButton.addEventListener("click", clearAllTasks);
 todoList.addEventListener("click", handleTaskClick);
 todoList.addEventListener("change", handleTaskToggle);
 todoInput.addEventListener("input", function () {
@@ -115,9 +115,9 @@ function handleTaskToggle(event) {
     renderTodos();
 }
 
-function deleteAllTasks() {
+function clearAllTasks() {
     if (todos.length === 0) {
-        showMessage("There are no tasks to delete.");
+        showMessage("There are no tasks to clear.");
         return;
     }
 
@@ -180,7 +180,7 @@ function updateCounts() {
 
 function toggleEmptyState() {
     emptyState.classList.toggle("show", todos.length === 0);
-    deleteAllButton.disabled = todos.length === 0;
+    clearAllButton.disabled = todos.length === 0;
 }
 
 function showMessage(text) {
